@@ -25,7 +25,12 @@ export class TableTop {
         output.reverse().map(row => {
             console.log(row.join(""));
         })
+
+        console.log(
+            "\n" +
+            `The robot is now at position ${robot.row}, ${robot.col} (marked with an 'X') and facing ${robot.facing}` +
+            "\n"
+        );
         
-        console.log("\n");
     }
 }
