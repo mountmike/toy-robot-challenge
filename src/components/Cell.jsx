@@ -1,7 +1,7 @@
-export default function Cell({ content }) {
+export default function Cell({ robot, facing }) {
   return (
-    <div className="cell-wrapper">
-      {content && "X"}
+    <div className={robot ? `cell-wrapper ${facing}` : "cell-wrapper"}>
+      {robot && "🤖"}
     </div>
   )
 }

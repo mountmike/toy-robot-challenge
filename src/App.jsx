@@ -2,32 +2,40 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Board from './components/Board'
 import Controls from './components/Controls';
-import { TableTop, Robot } from './utils/Classes';
 
-const tableTop = new TableTop()
-const defaultGrid = [
-  [false, false, false, false, false],
-  [false, false, false, false, false],
-  [false, false, false, false, false],
-  [false, false, false, false, false],
-  [false, false, false, false, false]
-]
 
 function App() {
-  const [grid, setGrid] = useState(defaultGrid)
+  const [grid, setGrid] = useState([
+    [false, false, false, false, false],
+    [false, false, false, false, false],
+    [false, false, false, false, false],
+    [false, false, false, false, false],
+    [false, false, false, false, false]
+  ])
+  const [robot, setRobot] = useState(null)
 
+  const init = () => {
+    setRobot({
+      facing: "North",
+      row: 0,
+      col: 0
+    })
+  }
 
   return (
     <div className="App">
       <aside>
         <Controls 
-          setGrid={setGrid}
-          tableTop={tableTop}
+          init={init}
+          grid={grid}
+          robot={robot}
+          setRobot={setRobot}
         />
       </aside>
       <main>
         <Board
           grid={grid}
+          robot={robot}
         />
       </main>
       
