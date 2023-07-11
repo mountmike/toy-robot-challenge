@@ -9,3 +9,6 @@ I dove straight into this with little planning as I just wanted to get my hands 
 A few obvious themes/concepts (a grid & a robot) are prompting what will probably be the next version I try - a more Object Orientated approach to structuring the code.
 
 ## 2. Object Orientated CLI version
+I wanted to make the CLI version still interactive so did some breif research and decided to use the node module `Inquirer` to take prompts on the command line.
+
+I then created 2 basic classes, one for the tabletop and another for the robot and set about building the logic using a more OOP approach.
